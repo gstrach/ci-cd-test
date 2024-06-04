@@ -5,7 +5,7 @@ namespace AnimalCountingDatabase.Tests
         [Fact]
         public void Test1()
         {
-            Assert.True(true);
+            Assert.True(1 == 0);
         }
     }
 }
