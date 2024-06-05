@@ -32,7 +32,7 @@ jobs:
         run: dotnet test -c Release --no-build
 
       - name: Publish  🗞️
-        run: dotnet publish -c Release --property:PublishDir=${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/strachweb
+        run: dotnet publish -c Release -o {{ env.AZURE_WEBAPP_PACKAGE_PATH }}/strachweb
               
       - name: Deploy to Azure Web Apps 🛳️
         uses: Azure/webapps-deploy@v3.0.1
