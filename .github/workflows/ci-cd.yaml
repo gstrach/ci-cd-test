@@ -32,7 +32,7 @@ jobs:
         run: dotnet test -c Release --no-build
 
       - name: Publish  🗞️
-        run: dotnet publish AnimalCountingDatabaseruntimeconfig.json -c Release --property:PublishDir=${{ env.AZURE_WEBAPP_PACKAGE_PATH}}/out
+        run: dotnet publish AnimalCountingDatabase.runtimeconfig.json -c Release --property:PublishDir=${{ env.AZURE_WEBAPP_PACKAGE_PATH}}/out
               
       - name: Deploy to Azure Web Apps 🛳️
         uses: Azure/webapps-deploy@v3.0.1
