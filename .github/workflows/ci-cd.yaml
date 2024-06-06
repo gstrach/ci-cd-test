@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Code 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Setup .Net 🛠️
         uses: actions/setup-dotnet@v4
@@ -32,7 +32,7 @@ jobs:
         run: dotnet test -c Release --no-build
 
       - name: Publish  🗞️
-        run: dotnet publish AnimalCountingDatabase.runtimeconfig.json -c Release --property:PublishDir=${{ env.AZURE_WEBAPP_PACKAGE_PATH}}/out
+        run: dotnet publish -c Release --property:PublishDir=${{ env.AZURE_WEBAPP_PACKAGE_PATH}}/out
               
       - name: Deploy to Azure Web Apps 🛳️
         uses: Azure/webapps-deploy@v3.0.1
