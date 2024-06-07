@@ -40,7 +40,7 @@ jobs:
 
       - name: Run automated tests 🧪
         env:
-          ConnectionStrings__DefaultConnection: Server=localhost;Database=AnimalCountingDatabase_Test;User=sa;Password=Pa$$w0rd
+          ConnectionStrings__DefaultConnection: Server=localhost;Database=AnimalCountingDatabase_Test;TrustServerCertificate=true;User=sa;Password=Pa$$w0rd
         run: dotnet test -c Release --no-build
 
       - name: Publish  🗞️
