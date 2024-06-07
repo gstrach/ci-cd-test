@@ -1,5 +1,3 @@
-namespace Template;
-
 public class WeatherForecast
 {
     public DateOnly Date { get; set; }

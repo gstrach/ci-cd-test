@@ -1,19 +1,15 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 
-namespace AnimalCountingDatabase.Api
+public class Customer
 {
-    public class Customer
-    {
-        public int Id{ get; set; }
-        public string CustomerName { get; set; }
-    }
-
-    public class CustomerContext: DbContext
-    {
-
-    }
-
-
+    public int Id { get; set; }
+    public string CustomerName { get; set; }
 }
+
+public class CustomerContext(DbContextOptions<CustomerContext> options) : DbContext(options)
+{
+    public DbSet<Customer> Customers { get; set; }
+}
+
 
